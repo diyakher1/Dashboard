@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Dashboard Wrapper -->
+    <div class="flex h-screen">
+
+        <!-- Sidebar -->
+        <div class="bg-gray-700 text-white w-64 space-y-6 p-6 hidden md:block">
+            <h2 class="text-2xl font-semibold">Dashboard</h2>
+            <ul>
+                <li class="py-2 px-4 hover:bg-gray-700 rounded-md">Dashboard</li>
+                <li class="py-2 px-4 hover:bg-gray-700 rounded-md">Analytics</li>
+                <li class="py-2 px-4 hover:bg-gray-700 rounded-md">Projects</li>
+                <li class="py-2 px-4 hover:bg-gray-700 rounded-md">Settings</li>
+            </ul>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col">
+
+            <!-- Header -->
+            <div class="bg-black p-4 flex justify-between items-center">
+                <button class="md:hidden text-gray-700" id="sidebar-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 12h18M3 18h18"></path>
+                    </svg>
+                </button>
+                <h1 class="text-xl font-semibold">Dashboard</h1>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-gray-200 p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6">
+                <h2 class="text-2xl font-semibold mb-4">Overview</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-4 shadow-lg rounded-lg">
+                        <h3 class="text-lg font-medium color=bg-gray-50">Total Revenue</h3>
+                        <p class="mt-2 text-xl">12,23,000</p>
+                        <div class="mt-4">
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-4 shadow-lg rounded-lg">
+                        <h3 class="text-lg font-medium">Active Users</h3>
+                        <p class="mt-2 text-xl">1,345</p>
+                        <div class="mt-4">
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-4 shadow-lg rounded-lg">
+                        <h3 class="text-lg font-medium">New Projects</h3>
+                        <p class="mt-2 text-xl">48</p>
+                        <div class="mt-4">
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white p-4 shadow-lg rounded-lg">
+                        <h3 class="text-lg font-medium">Support Tickets</h3>
+                        <p class="mt-2 text-xl">16</p>
+                        <div class="mt-4">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table (Example Content) -->
+                <div class="mt-8 bg-white p-6 shadow-lg rounded-lg">
+                    <h3 class="text-lg font-medium mb-4">Recent Activity</h3>
+                    <table class="min-w-full table-auto">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Activity</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-gray-50">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">User registration</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Feb 10, 2025</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500">Completed</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Payment processed</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Feb 11, 2025</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500">completed</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ticket resolved</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Feb 9, 2025</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-yellow-500">pending</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar Toggle (for small screens) -->
+    <div id="sidebar-mobile" class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-gray-800 text-white w-64 p-6">
+            <h2 class="text-2xl font-semibold mb-6">Dashboard</h2>
+            <ul>
+                <li class="py-2 px-4 hover:bg-gray-700 rounded-md">Dashboard</li>
+                <li class="py-2 px-4 hover:bg-gray-700 rounded-md">Analytics</li>
+                <li class="py-2 px-4 hover:bg-gray-700 rounded-md">Projects</li>
+                <li class="py-2 px-4 hover:bg-gray-700 rounded-md">Settings</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tailwind JS for interactivity -->
+    <script>
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarMobile = document.getElementById('sidebar-mobile');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebarMobile.classList.toggle('hidden');
+        });
+
+        sidebarMobile.addEventListener('click', () => {
+            sidebarMobile.classList.add('hidden');
+        });
+    </script>
+
+</body>
+
+</html>
